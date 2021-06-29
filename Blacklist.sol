@@ -2,7 +2,7 @@ pragma solidity ^0.8.5;
 import "./IAntiBotBlacklist.sol";
 
 abstract contract Blacklist{
-    IAntiBotBlacklist _blacklist = IAntiBotBlacklist(0xd315Ba9c4e1D74e1a5E321E25a04A4857a76671C);
+    IAntiBotBlacklist _blacklist = IAntiBotBlacklist(0x11De5b2294b769fe4559f60bEC07912b9db6e5cE);
     modifier antiBot(address _user) {
         require( _blacklist.blacklistCheck(_user),"user is in decentralized blacklist");
         _;
