@@ -42,7 +42,7 @@ contract AntiBotBlacklist is Ownable, IAntiBotBlacklist {
     /**
      * @dev Add multi address to the blacklist. Only the owner can add. Owner is the address of the Governance contract.
      */
-    function dddSuspectBatch(address[] memory _addresses,uint256 _expirationTime) external override onlyOwner{
+    function addSuspectBatch(address[] memory _addresses,uint256 _expirationTime) external override onlyOwner{
         require(_addresses.length>0,"addresses is empty");
         for(uint i=0;i<_addresses.length;i++){
             _addSuspectToBlackList(_addresses[i],_expirationTime);
